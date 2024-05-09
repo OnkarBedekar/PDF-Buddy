@@ -92,14 +92,14 @@ def main():
                 st.markdown(message["content"])
 
         if user_question := st.chat_input("Ask your question here"):
-            with st.chat_message("user", avatar='👨‍🦰'):
+            with st.chat_message("user"):
                 st.markdown(user_question)
 
             docs = VectorStore.similarity_search(query=user_question + 'and give concise answer', k=3)
             chain = load_qa_chain(llm=llm, chain_type="stuff")
             st.session_state.messages.append({"role": "user", "content": user_question})
 
-            with st.chat_message("assistant", avatar='🤖'):
+            with st.chat_message("assistant"):
                 with st.spinner('Thinking...'):
                     response = chain.run(input_documents=docs, question=user_question)
                     st.session_state.messages.append({"role": "assistant", "content": response})
