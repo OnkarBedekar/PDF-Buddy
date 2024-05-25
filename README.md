@@ -1,6 +1,8 @@
 # PDF Buddy
 PDF Buddy is a Python chatbot developed using LangChain for interacting with PDF files. It integrates a locally running Large Language Model (LLM) using LM Studio for natural language processing. The chatbot creates embeddings of PDF files for enhanced document understanding and implements a vector database for efficient storage and retrieval of embeddings.
 
+## Demo
+
 
 ## Features
 - PDF Interaction: The chatbot allows users to interact with PDF files, extracting information, answering questions, and performing actions based on the content.
